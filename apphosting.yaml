@@ -27,5 +27,5 @@ env:
     secret: stripe-secret-key
   - variable: NEXT_PUBLIC_STRIPE_PUB_KEY
     value: pk_test_51QufCrB0KNbQXb1tMO6bGpU0NksM7eycyi3Vc8lhityIAXyFVxK1GZRVFxU6H0iwGDtXF1niohLQLA8iGB3e4BJB00HY1vrr0R
-  - variable: STRIPE_WEBHOOK_SECRET
-    secret: STRIPE_WEBHOOK_SECRET
+  # - variable: STRIPE_WEBHOOK_SECRET
+  #   secret: STRIPE_WEBHOOK_SECRET
