@@ -12,9 +12,9 @@ import {
 const secret = process.env.STRIPE_WEBHOOK_SECRET
 export async function POST(request: Request) {
   try {
-   /*  if (!secret) {
+    if (!secret) {
       throw new Error('STRIPE_WEBHOOK_SECRET is not set')
-    } */
+    }
 
     const body = await request.text()
     const headersStore = await headers()
