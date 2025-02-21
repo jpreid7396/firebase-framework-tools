@@ -2,7 +2,7 @@ import { getDataConnect, queryRef, executeQuery, mutationRef, executeMutation, v
 
 export const connectorConfig = {
   connector: 'default',
-  service: 'firebase-ecommerce',
+  service: 'julia-data-connect',
   location: 'us-central1'
 };
 

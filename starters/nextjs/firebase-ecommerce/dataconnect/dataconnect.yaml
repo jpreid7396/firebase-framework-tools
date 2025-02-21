@@ -1,12 +1,12 @@
 specVersion: "v1beta"
-serviceId: "firebase-ecommerce"
+serviceId: julia-data-connect"
 location: "us-central1"
 schema:
   source: "./schema"
   datasource:
     postgresql:
-      database: "firebase-ecommerce"
+      database: "julia-database"
       cloudSql:
-        instanceId: "firebase-ecommerce"
+        instanceId: " julia-cloud-sql"
       # schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]
