@@ -1,5 +1,5 @@
 specVersion: "v1beta"
-serviceId: julia-data-connect"
+serviceId: "julia-data-connect"
 location: "us-central1"
 schema:
   source: "./schema"
@@ -7,6 +7,6 @@ schema:
     postgresql:
       database: "julia-database"
       cloudSql:
-        instanceId: " julia-cloud-sql"
+        instanceId: "julia-cloud-sql"
       # schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]

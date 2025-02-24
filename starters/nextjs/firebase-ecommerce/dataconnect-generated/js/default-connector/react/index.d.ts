@@ -1,0 +1,54 @@
+import { UpsertCustomerData, UpsertCustomerVariables, CreateProductReviewData, CreateProductReviewVariables, CreateOrderData, CreateOrderVariables, UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables, UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables, CreateOrderItemData, CreateOrderItemVariables, ListCustomersData, GetReviewsByHandleData, GetReviewsByHandleVariables, GetProductByHandleData, GetProductByHandleVariables, GetCollectionByHandleData, GetCollectionByHandleVariables, GetCollectionsByPageData, GetCollectionsByPageVariables, SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables, SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables, SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables, GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables, GetOrderByIdData, GetOrderByIdVariables} from '../';
+import { useDataConnectQueryOptions, FlattenedQueryResult, useDataConnectMutationOptions, FlattenedMutationResult} from '@tanstack-query-firebase/react/data-connect';
+import { UseQueryResult, UseMutationResult} from '@tanstack/react-query';
+import { DataConnect } from 'firebase/data-connect';
+import { FirebaseError } from 'firebase/app';
+
+
+export function useUpsertCustomer(options?: useDataConnectMutationOptions<UpsertCustomerData, UpsertCustomerVariables>): UseMutationResult<FlattenedMutationResult<UpsertCustomerData, UpsertCustomerVariables>, FirebaseError, UpsertCustomerVariables>;
+export function useUpsertCustomer(dc: DataConnect, options?: useDataConnectMutationOptions<UpsertCustomerData, UpsertCustomerVariables>): UseMutationResult<FlattenedMutationResult<UpsertCustomerData, UpsertCustomerVariables>, FirebaseError, UpsertCustomerVariables>;
+
+export function useCreateProductReview(options?: useDataConnectMutationOptions<CreateProductReviewData, CreateProductReviewVariables>): UseMutationResult<FlattenedMutationResult<CreateProductReviewData, CreateProductReviewVariables>, FirebaseError, CreateProductReviewVariables>;
+export function useCreateProductReview(dc: DataConnect, options?: useDataConnectMutationOptions<CreateProductReviewData, CreateProductReviewVariables>): UseMutationResult<FlattenedMutationResult<CreateProductReviewData, CreateProductReviewVariables>, FirebaseError, CreateProductReviewVariables>;
+
+export function useCreateOrder(options?: useDataConnectMutationOptions<CreateOrderData, CreateOrderVariables>): UseMutationResult<FlattenedMutationResult<CreateOrderData, CreateOrderVariables>, FirebaseError, CreateOrderVariables>;
+export function useCreateOrder(dc: DataConnect, options?: useDataConnectMutationOptions<CreateOrderData, CreateOrderVariables>): UseMutationResult<FlattenedMutationResult<CreateOrderData, CreateOrderVariables>, FirebaseError, CreateOrderVariables>;
+
+export function useUpdateOrderByPaymentIntentId(options?: useDataConnectMutationOptions<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>): UseMutationResult<FlattenedMutationResult<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>, FirebaseError, UpdateOrderByPaymentIntentIdVariables>;
+export function useUpdateOrderByPaymentIntentId(dc: DataConnect, options?: useDataConnectMutationOptions<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>): UseMutationResult<FlattenedMutationResult<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>, FirebaseError, UpdateOrderByPaymentIntentIdVariables>;
+
+export function useUpdateOrderByChargeId(options?: useDataConnectMutationOptions<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>): UseMutationResult<FlattenedMutationResult<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>, FirebaseError, UpdateOrderByChargeIdVariables>;
+export function useUpdateOrderByChargeId(dc: DataConnect, options?: useDataConnectMutationOptions<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>): UseMutationResult<FlattenedMutationResult<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>, FirebaseError, UpdateOrderByChargeIdVariables>;
+
+export function useCreateOrderItem(options?: useDataConnectMutationOptions<CreateOrderItemData, CreateOrderItemVariables>): UseMutationResult<FlattenedMutationResult<CreateOrderItemData, CreateOrderItemVariables>, FirebaseError, CreateOrderItemVariables>;
+export function useCreateOrderItem(dc: DataConnect, options?: useDataConnectMutationOptions<CreateOrderItemData, CreateOrderItemVariables>): UseMutationResult<FlattenedMutationResult<CreateOrderItemData, CreateOrderItemVariables>, FirebaseError, CreateOrderItemVariables>;
+
+export function useListCustomers(options?: useDataConnectQueryOptions<ListCustomersData>): UseQueryResult<FlattenedQueryResult<ListCustomersData, undefined>, FirebaseError>;
+export function useListCustomers(dc: DataConnect, options?: useDataConnectQueryOptions<ListCustomersData>): UseQueryResult<FlattenedQueryResult<ListCustomersData, undefined>, FirebaseError>;
+
+export function useGetReviewsByHandle(vars: GetReviewsByHandleVariables, options?: useDataConnectQueryOptions<GetReviewsByHandleData>): UseQueryResult<FlattenedQueryResult<GetReviewsByHandleData, GetReviewsByHandleVariables>, FirebaseError>;
+export function useGetReviewsByHandle(dc: DataConnect, vars: GetReviewsByHandleVariables, options?: useDataConnectQueryOptions<GetReviewsByHandleData>): UseQueryResult<FlattenedQueryResult<GetReviewsByHandleData, GetReviewsByHandleVariables>, FirebaseError>;
+
+export function useGetProductByHandle(vars: GetProductByHandleVariables, options?: useDataConnectQueryOptions<GetProductByHandleData>): UseQueryResult<FlattenedQueryResult<GetProductByHandleData, GetProductByHandleVariables>, FirebaseError>;
+export function useGetProductByHandle(dc: DataConnect, vars: GetProductByHandleVariables, options?: useDataConnectQueryOptions<GetProductByHandleData>): UseQueryResult<FlattenedQueryResult<GetProductByHandleData, GetProductByHandleVariables>, FirebaseError>;
+
+export function useGetCollectionByHandle(vars: GetCollectionByHandleVariables, options?: useDataConnectQueryOptions<GetCollectionByHandleData>): UseQueryResult<FlattenedQueryResult<GetCollectionByHandleData, GetCollectionByHandleVariables>, FirebaseError>;
+export function useGetCollectionByHandle(dc: DataConnect, vars: GetCollectionByHandleVariables, options?: useDataConnectQueryOptions<GetCollectionByHandleData>): UseQueryResult<FlattenedQueryResult<GetCollectionByHandleData, GetCollectionByHandleVariables>, FirebaseError>;
+
+export function useGetCollectionsByPage(vars: GetCollectionsByPageVariables, options?: useDataConnectQueryOptions<GetCollectionsByPageData>): UseQueryResult<FlattenedQueryResult<GetCollectionsByPageData, GetCollectionsByPageVariables>, FirebaseError>;
+export function useGetCollectionsByPage(dc: DataConnect, vars: GetCollectionsByPageVariables, options?: useDataConnectQueryOptions<GetCollectionsByPageData>): UseQueryResult<FlattenedQueryResult<GetCollectionsByPageData, GetCollectionsByPageVariables>, FirebaseError>;
+
+export function useSearchProductDescriptionUsingL2similarity(vars: SearchProductDescriptionUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductDescriptionUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>, FirebaseError>;
+export function useSearchProductDescriptionUsingL2similarity(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductDescriptionUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>, FirebaseError>;
+
+export function useSearchProductTitleUsingL2similarity(vars: SearchProductTitleUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductTitleUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>, FirebaseError>;
+export function useSearchProductTitleUsingL2similarity(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductTitleUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>, FirebaseError>;
+
+export function useSearchProductReviewContentUsingL2similarity(vars: SearchProductReviewContentUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductReviewContentUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>, FirebaseError>;
+export function useSearchProductReviewContentUsingL2similarity(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables, options?: useDataConnectQueryOptions<SearchProductReviewContentUsingL2similarityData>): UseQueryResult<FlattenedQueryResult<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>, FirebaseError>;
+
+export function useGetOrdersByCustomerId(vars: GetOrdersByCustomerIdVariables, options?: useDataConnectQueryOptions<GetOrdersByCustomerIdData>): UseQueryResult<FlattenedQueryResult<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>, FirebaseError>;
+export function useGetOrdersByCustomerId(dc: DataConnect, vars: GetOrdersByCustomerIdVariables, options?: useDataConnectQueryOptions<GetOrdersByCustomerIdData>): UseQueryResult<FlattenedQueryResult<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>, FirebaseError>;
+
+export function useGetOrderById(vars: GetOrderByIdVariables, options?: useDataConnectQueryOptions<GetOrderByIdData>): UseQueryResult<FlattenedQueryResult<GetOrderByIdData, GetOrderByIdVariables>, FirebaseError>;
+export function useGetOrderById(dc: DataConnect, vars: GetOrderByIdVariables, options?: useDataConnectQueryOptions<GetOrderByIdData>): UseQueryResult<FlattenedQueryResult<GetOrderByIdData, GetOrderByIdVariables>, FirebaseError>;
