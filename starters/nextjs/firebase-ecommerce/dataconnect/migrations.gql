@@ -2,21 +2,26 @@ mutation CreateProductSEOs {
   sEO_insertMany(
     data: [
       {
+        id: "abd29d65e87849cdba7fb0ab060a34d6"
         title: "Amber Sunset Blazer Set - Elegant Women's Fashion"
         description: "Drawing from the warm orange blazer paired with a complementary ivory outfit."
         keywords: "blazer, sunset, amber, women's fashion, elegant, outfit"
       }
       {
+        id: "16529e0d1c5840e1845c4cf7655ca6f6"
         title: "Classic Ivory Tailored Suit - Timeless Elegance"
         description: "Highlighting the clean, classic design of the ivory suit in a minimalist background."
         keywords: "suit, ivory, tailored, classic, minimalist, elegant"
+        
       }
       {
+        id: "2954379e2f104fc6b39b4ef94e8d636d"
         title: "Ebony Reed Blazer - Sophisticated Style"
         description: "Acknowledging the dark, textured blazer in the natural reed-filled setting."
         keywords: "blazer, ebony, reed, textured, dark, sophisticated"
       }
       {
+        id: "f7e5f5c94b4f4a62ad206f0f4a28fbab"
         title: "Ivory Meadow Blazer - Natural Elegance"
         description: "Inspired by the serene outdoor setting and the ivory-tone jacket."
         keywords: "blazer, ivory, meadow, serene, natural, elegant"
@@ -29,12 +34,13 @@ mutation CreateProducts {
   product_insertMany(
     data: [
       {
+        id: "582e43b707144bcb8fa9f72fe469b91e"
         handle: "amber-sunset-blazer-set"
         title: "Amber Sunset Blazer Set"
         description: "Drawing from the warm orange blazer paired with a complementary ivory outfit."
         availableForSale: true
         productType: "Blazer Set"
-        seoId: "2d2275d085ee4ea790a5c69a1841d506"
+        seoId: "abd29d65e87849cdba7fb0ab060a34d6"
         titleEmbedding_embed: { model: "textembedding-gecko@003", text: "Amber Sunset Blazer Set" }
         descriptionEmbedding_embed: {
           model: "textembedding-gecko@003"
@@ -42,12 +48,13 @@ mutation CreateProducts {
         }
       }
       {
+        id: "2ea74435df1f43f6bbb599f790ccde16"
         handle: "classic-ivory-tailored-suit"
         title: "Classic Ivory Tailored Suit"
         description: "Highlighting the clean, classic design of the ivory suit in a minimalist background."
         availableForSale: true
         productType: "Tailored Suit"
-        seoId: "1ba47f6cb41743d7903c897972eed31d"
+        seoId: "16529e0d1c5840e1845c4cf7655ca6f6"
         titleEmbedding_embed: {
           model: "textembedding-gecko@003"
           text: "Classic Ivory Tailored Suit"
@@ -58,12 +65,13 @@ mutation CreateProducts {
         }
       }
       {
+        id: "6eff69de94f64f38adefc40adfd37c93"
         handle: "ebony-reed-blazer"
         title: "Ebony Reed Blazer"
         description: "Acknowledging the dark, textured blazer in the natural reed-filled setting."
         availableForSale: true
         productType: "Blazer"
-        seoId: "b81350c200e34f269cd139c988da9097"
+        seoId: "2954379e2f104fc6b39b4ef94e8d636d"
         titleEmbedding_embed: { model: "textembedding-gecko@003", text: "Ebony Reed Blazer" }
         descriptionEmbedding_embed: {
           model: "textembedding-gecko@003"
@@ -71,12 +79,13 @@ mutation CreateProducts {
         }
       }
       {
+        id: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         handle: "ivory-meadow-blazer"
         title: "Ivory Meadow Blazer"
         description: "Inspired by the serene outdoor setting and the ivory-tone jacket."
         availableForSale: true
         productType: "Blazer"
-        seoId: "fd9f9ad5996342e48339a8b12ac52146"
+        seoId: "f7e5f5c94b4f4a62ad206f0f4a28fbab"
         titleEmbedding_embed: { model: "textembedding-gecko@003", text: "Ivory Meadow Blazer" }
         descriptionEmbedding_embed: {
           model: "textembedding-gecko@003"
@@ -91,7 +100,8 @@ mutation CreateProductImages {
   productImage_insertMany(
     data: [
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        id: "224d3ba1c5b64515a12582aaca793ed5"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/product_images%2FAmber_Blazer.webp?alt=media&token=7c746d1b-971f-48cc-80b6-354c0e6235b5"
         altText: "Amber Sunset Blazer Set"
         featured: true
@@ -100,7 +110,8 @@ mutation CreateProductImages {
         displayPosition: 1
       }
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        id: "6a8c6cf907b34ef5b73bb2cab245e825"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/product_images%2FClassic_Tailored_Suit.webp?alt=media&token=612c8d69-74fe-4ed7-ba1a-1e524dfbb5be"
         altText: "Classic Ivory Tailored Suit"
         featured: true
@@ -109,7 +120,8 @@ mutation CreateProductImages {
         displayPosition: 1
       }
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        id: "704b5c8c9c544e1bb2ac0260e5884112"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/product_images%2FEbony_Reed_Blazer.webp?alt=media&token=31cd4905-3781-42f8-95cb-a991420fc277"
         altText: "Ebony Reed Blazer"
         featured: true
@@ -118,7 +130,8 @@ mutation CreateProductImages {
         displayPosition: 1
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        id: "64558422cac54bb09f091cb7b6595fd3"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/product_images%2FIvory_Meadow_Blazer.webp?alt=media&token=319182ab-2d5e-43fc-8c4e-dc308f32985a"
         altText: "Ivory Meadow Blazer"
         featured: true
@@ -132,29 +145,29 @@ mutation CreateProductImages {
 
 mutation UpdateProduct1 {
   product_update(
-    id: "b4cf88b7ec9f40a791e7e1d412baead0"
-    data: { featuredImageId: "769aecd0e4af47dabd1cb0980cbecdf4" }
+    id: "582e43b707144bcb8fa9f72fe469b91e"
+    data: { featuredImageId: "224d3ba1c5b64515a12582aaca793ed5" }
   )
 }
 
 mutation UpdateProduct2 {
   product_update(
-    id: "db0fe344ad004877b0e9df2e22554ab9"
-    data: { featuredImageId: "646fedefe6df42debdeeea2bd05e5bec" }
+    id: "2ea74435df1f43f6bbb599f790ccde16"
+    data: { featuredImageId: "6a8c6cf907b34ef5b73bb2cab245e825" }
   )
 }
 
 mutation UpdateProduct3 {
   product_update(
-    id: "3c1489bfecee4fae950d21304cf3ae54"
-    data: { featuredImageId: "c27f89a4ba2b4f79ab6a56e2c54ab92d" }
+    id: "6eff69de94f64f38adefc40adfd37c93"
+    data: { featuredImageId: "704b5c8c9c544e1bb2ac0260e5884112" }
   )
 }
 
 mutation UpdateProduct4 {
   product_update(
-    id: "c9931067762c4e7e921647d2f9f2c61e"
-    data: { featuredImageId: "59c7246d57184dd8b1fe7d0d7a24b259" }
+    id: "84ee5a0646f84ad4b4d82fc8aa0a6696"
+    data: { featuredImageId: "64558422cac54bb09f091cb7b6595fd3" }
   )
 }
 
@@ -163,7 +176,7 @@ mutation CreateProductVariants {
     data: [
       # Amber Sunset Blazer Set Variants
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         title: "Small / Amber"
         price: 199.99
         availableForSale: true
@@ -171,7 +184,7 @@ mutation CreateProductVariants {
         sku: "ASB-S-AMB"
       }
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         title: "Medium / Amber"
         price: 199.99
         availableForSale: true
@@ -179,7 +192,7 @@ mutation CreateProductVariants {
         sku: "ASB-M-AMB"
       }
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         title: "Large / Amber"
         price: 199.99
         availableForSale: true
@@ -187,7 +200,7 @@ mutation CreateProductVariants {
         sku: "ASB-L-AMB"
       }
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         title: "XLarge / Amber"
         price: 199.99
         availableForSale: true
@@ -196,7 +209,7 @@ mutation CreateProductVariants {
       }
       # Classic Ivory Tailored Suit Variants
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         title: "Small / Ivory"
         price: 299.99
         availableForSale: true
@@ -204,7 +217,7 @@ mutation CreateProductVariants {
         sku: "CIS-S-IVY"
       }
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         title: "Medium / Ivory"
         price: 299.99
         availableForSale: true
@@ -212,7 +225,7 @@ mutation CreateProductVariants {
         sku: "CIS-M-IVY"
       }
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         title: "Large / Ivory"
         price: 299.99
         availableForSale: true
@@ -220,7 +233,7 @@ mutation CreateProductVariants {
         sku: "CIS-L-IVY"
       }
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         title: "XLarge / Ivory"
         price: 299.99
         availableForSale: true
@@ -229,7 +242,7 @@ mutation CreateProductVariants {
       }
       # Ebony Reed Blazer Variants
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         title: "Small / Ebony"
         price: 179.99
         availableForSale: true
@@ -237,7 +250,7 @@ mutation CreateProductVariants {
         sku: "ERB-S-EBN"
       }
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         title: "Medium / Ebony"
         price: 179.99
         availableForSale: true
@@ -245,7 +258,7 @@ mutation CreateProductVariants {
         sku: "ERB-M-EBN"
       }
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         title: "Large / Ebony"
         price: 179.99
         availableForSale: true
@@ -253,7 +266,7 @@ mutation CreateProductVariants {
         sku: "ERB-L-EBN"
       }
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         title: "XLarge / Ebony"
         price: 179.99
         availableForSale: true
@@ -262,7 +275,7 @@ mutation CreateProductVariants {
       }
       # Ivory Meadow Blazer Variants
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         title: "Small / Ivory"
         price: 169.99
         availableForSale: true
@@ -270,7 +283,7 @@ mutation CreateProductVariants {
         sku: "IMB-S-IVY"
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         title: "Medium / Ivory"
         price: 169.99
         availableForSale: true
@@ -278,7 +291,7 @@ mutation CreateProductVariants {
         sku: "IMB-M-IVY"
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         title: "Large / Ivory"
         price: 169.99
         availableForSale: true
@@ -286,7 +299,7 @@ mutation CreateProductVariants {
         sku: "IMB-L-IVY"
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         title: "XLarge / Ivory"
         price: 169.99
         availableForSale: true
@@ -341,7 +354,7 @@ mutation CreateProductReviews {
     data: [
       # Amber Sunset Blazer Set Reviews
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         customerId: "BWup6n8pG8POFosRNJVry0gf66g1"
         rating: 5
         content: "The amber color is absolutely stunning in person! The fabric quality is exceptional, and the complementary ivory pieces make it versatile for both work and special occasions."
@@ -351,7 +364,7 @@ mutation CreateProductReviews {
         }
       }
       {
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         customerId: "KXup7n9pH9QOGptSNKWsz1hg77h2"
         rating: 4
         content: "Beautiful blazer set, though the sleeves run slightly long. Had to get them tailored, but the quality is worth the extra effort."
@@ -362,7 +375,7 @@ mutation CreateProductReviews {
       }
       # Classic Ivory Tailored Suit Reviews
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         customerId: "LYup8n0pI0RPHquTOLXtz2ih88i3"
         rating: 5
         content: "Exceptional tailoring and the ivory color is pure elegance. Perfect for my wedding suit! The minimalist design is timeless."
@@ -372,7 +385,7 @@ mutation CreateProductReviews {
         }
       }
       {
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         customerId: "MZup9n1pJ1SQIrvUPMYuA3ji99j4"
         rating: 4
         content: "High-quality fabric and beautiful design. The suit requires careful maintenance to keep its pristine look, but it's worth it."
@@ -383,7 +396,7 @@ mutation CreateProductReviews {
       }
       # Ebony Reed Blazer Reviews
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         customerId: "BWup6n8pG8POFosRNJVry0gf66g1"
         rating: 5
         content: "The texture of this blazer is amazing! The dark color is rich and sophisticated. Perfect for business meetings."
@@ -393,7 +406,7 @@ mutation CreateProductReviews {
         }
       }
       {
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         customerId: "KXup7n9pH9QOGptSNKWsz1hg77h2"
         rating: 4
         content: "Love the unique texture and natural reed setting aesthetic. The buttons could be more secure, but overall excellent quality."
@@ -404,7 +417,7 @@ mutation CreateProductReviews {
       }
       # Ivory Meadow Blazer Reviews
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         customerId: "LYup8n0pI0RPHquTOLXtz2ih88i3"
         rating: 5
         content: "This blazer is a dream! The ivory tone is perfect and it's incredibly versatile. The natural elegance makes it a wardrobe essential."
@@ -414,7 +427,7 @@ mutation CreateProductReviews {
         }
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         customerId: "MZup9n1pJ1SQIrvUPMYuA3ji99j4"
         rating: 4
         content: "Beautiful blazer with a serene aesthetic. Requires careful maintenance to keep the ivory color pristine, but the quality is outstanding."
@@ -431,16 +444,19 @@ mutation CreateCollectionSEOs {
   sEO_insertMany(
     data: [
       {
+        id: "d7a913d7104a4173a8bcbf4e45dfba4f"
         title: "O24 Collection - Premium Fashion Essentials"
         description: "Discover our O24 Collection featuring premium fashion pieces with exceptional craftsmanship and modern design."
         keywords: "O24, fashion collection, premium clothing, modern fashion, designer wear"
       }
       {
+        id: "23f24aef4de0497e85e88d7bdf317414"
         title: "Mist Collection - Nature-Inspired Elegance"
         description: "Experience the Mist Collection, where nature meets sophistication in a range of meticulously tailored blazers and elegant pieces."
         keywords: "mist collection, nature-inspired fashion, elegant blazers, sophisticated style, minimalist fashion"
       }
       {
+        id: "603012953ca14828bc67d22be50d75a9"
         title: "Winter Essentials - Seasonal Fashion Collection"
         description: "Stay stylish and warm with our Winter Essentials collection, featuring carefully curated pieces for the cold season."
         keywords: "winter fashion, winter essentials, seasonal collection, winter style, cold weather fashion"
@@ -453,7 +469,8 @@ mutation CreateCollectionImages {
   productImage_insertMany(
     data: [
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        id: "857760ddd31e406e98ceb995ce0d548c"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/collections%2FMist_Featured.webp?alt=media&token=184227ec-30d0-4520-9d42-048cf13bbb78"
         altText: "Mist Collection"
         featured: true
@@ -462,7 +479,8 @@ mutation CreateCollectionImages {
         displayPosition: 1
       }
       {
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        id: "f9dd7bb1337a43b28a4b7e9bfc31f201"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         url: "https://firebasestorage.googleapis.com/v0/b/fir-ecommerce-13f94.firebasestorage.app/o/collections%2Fo24-featured.webp?alt=media&token=fd2a47ac-5318-4be1-b3fd-6ff228318370"
         altText: "O24 Collection"
         featured: true
@@ -478,28 +496,31 @@ mutation CreateCollections {
   collection_insertMany(
     data: [
       {
+        id: "1eca96176a49488990245de50700e6de"
         handle: "o24-collection"
         name: "O24 — Collection"
         description: "Knitted from soft chenille, this sweater features chain-stitched Varsity A embroidery. The regular-fit silhouette is bordered by flexible ribbing."
-        seoId: "0f2ae73c8d8d4207936e25125d3794bd"
+        seoId: "d7a913d7104a4173a8bcbf4e45dfba4f"
         page: "home"
-        featuredImageId: "4eec7888d56c496fa7389151cb50a76e"
+        featuredImageId: "f9dd7bb1337a43b28a4b7e9bfc31f201"
       }
       {
+        id: "f398139261204706aa624fd9369fc2ce"
         handle: "mist-collection"
         name: "Mist Collection"
         description: "Introducing the Noir Essence Collection, a sophisticated range of apparel inspired by nature's raw elegance. The collection features meticulously tailored black blazers designed for modern minimalism and effortless refinement. Capturing the serenity of open landscapes, each piece embodies a seamless blend of structure and freedom. Perfect for individuals who value versatility and understated style, the Noir Essence Collection redefines contemporary fashion with its timeless appeal."
-        seoId: "7244915a02d2496bb0f54070c24a7a6a"
+        seoId: "23f24aef4de0497e85e88d7bdf317414"
         page: "home"
-        featuredImageId: "a3404a5ab7c04893876b5af433f42d2a"
+        featuredImageId: "857760ddd31e406e98ceb995ce0d548c"
       }
       {
+        id: "572ddfc27d164ea1833a4cbe65a42cfc"
         handle: "winter-essentials"
         name: "Winter Essentials"
         description: "Discover our collection of winter essentials, designed to keep you warm and stylish throughout the season."
-        seoId: "2954ddccf36d4e6a9d4be934653d81b6"
+        seoId: "603012953ca14828bc67d22be50d75a9"
         page: "home"
-        featuredImageId: "a3404a5ab7c04893876b5af433f42d2a"
+        featuredImageId: "857760ddd31e406e98ceb995ce0d548c"
       }
     ]
   )
@@ -511,64 +532,64 @@ mutation CreateProductCollections {
       # O24 Collection (1eca96176a49488990245de50700e6de)
       {
         collectionId: "1eca96176a49488990245de50700e6de"
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0" # Amber Sunset Blazer Set
+        productId: "582e43b707144bcb8fa9f72fe469b91e" # Amber Sunset Blazer Set
         displayPosition: 1
       }
       {
         collectionId: "1eca96176a49488990245de50700e6de"
-        productId: "db0fe344ad004877b0e9df2e22554ab9" # Classic Ivory Tailored Suit
+        productId: "2ea74435df1f43f6bbb599f790ccde16" # Classic Ivory Tailored Suit
         displayPosition: 2
       }
       {
         collectionId: "1eca96176a49488990245de50700e6de"
-        productId: "3c1489bfecee4fae950d21304cf3ae54" # Ebony Reed Blazer
+        productId: "6eff69de94f64f38adefc40adfd37c93" # Ebony Reed Blazer
         displayPosition: 3
       }
       {
         collectionId: "1eca96176a49488990245de50700e6de"
-        productId: "c9931067762c4e7e921647d2f9f2c61e" # Ivory Meadow Blazer
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696" # Ivory Meadow Blazer
         displayPosition: 4
       }
       # Mist Collection (f398139261204706aa624fd9369fc2ce)
       {
         collectionId: "f398139261204706aa624fd9369fc2ce"
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         displayPosition: 1
       }
       {
         collectionId: "f398139261204706aa624fd9369fc2ce"
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         displayPosition: 2
       }
       {
         collectionId: "f398139261204706aa624fd9369fc2ce"
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         displayPosition: 3
       }
       {
         collectionId: "f398139261204706aa624fd9369fc2ce"
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         displayPosition: 4
       }
       # Winter Essentials (572ddfc27d164ea1833a4cbe65a42cfc)
       {
         collectionId: "572ddfc27d164ea1833a4cbe65a42cfc"
-        productId: "b4cf88b7ec9f40a791e7e1d412baead0"
+        productId: "582e43b707144bcb8fa9f72fe469b91e"
         displayPosition: 1
       }
       {
         collectionId: "572ddfc27d164ea1833a4cbe65a42cfc"
-        productId: "db0fe344ad004877b0e9df2e22554ab9"
+        productId: "2ea74435df1f43f6bbb599f790ccde16"
         displayPosition: 2
       }
       {
         collectionId: "572ddfc27d164ea1833a4cbe65a42cfc"
-        productId: "3c1489bfecee4fae950d21304cf3ae54"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         displayPosition: 3
       }
       {
         collectionId: "572ddfc27d164ea1833a4cbe65a42cfc"
-        productId: "c9931067762c4e7e921647d2f9f2c61e"
+        productId: "6eff69de94f64f38adefc40adfd37c93"
         displayPosition: 4
       }
     ]

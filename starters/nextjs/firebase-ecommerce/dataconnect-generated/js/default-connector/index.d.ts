@@ -419,144 +419,144 @@ export interface UpsertCustomerVariables {
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function upsertCustomerRef(vars: UpsertCustomerVariables): (MutationRef<UpsertCustomerData, UpsertCustomerVariables> & { __angular?: false });
+export function upsertCustomerRef(vars: UpsertCustomerVariables): MutationRef<UpsertCustomerData, UpsertCustomerVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function upsertCustomerRef(dc: DataConnect, vars: UpsertCustomerVariables): (MutationRef<UpsertCustomerData, UpsertCustomerVariables> & { __angular?: false });
+export function upsertCustomerRef(dc: DataConnect, vars: UpsertCustomerVariables): MutationRef<UpsertCustomerData, UpsertCustomerVariables>;
 
 export function upsertCustomer(vars: UpsertCustomerVariables): MutationPromise<UpsertCustomerData, UpsertCustomerVariables>;
 export function upsertCustomer(dc: DataConnect, vars: UpsertCustomerVariables): MutationPromise<UpsertCustomerData, UpsertCustomerVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function createProductReviewRef(vars: CreateProductReviewVariables): (MutationRef<CreateProductReviewData, CreateProductReviewVariables> & { __angular?: false });
+export function createProductReviewRef(vars: CreateProductReviewVariables): MutationRef<CreateProductReviewData, CreateProductReviewVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function createProductReviewRef(dc: DataConnect, vars: CreateProductReviewVariables): (MutationRef<CreateProductReviewData, CreateProductReviewVariables> & { __angular?: false });
+export function createProductReviewRef(dc: DataConnect, vars: CreateProductReviewVariables): MutationRef<CreateProductReviewData, CreateProductReviewVariables>;
 
 export function createProductReview(vars: CreateProductReviewVariables): MutationPromise<CreateProductReviewData, CreateProductReviewVariables>;
 export function createProductReview(dc: DataConnect, vars: CreateProductReviewVariables): MutationPromise<CreateProductReviewData, CreateProductReviewVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function createOrderRef(vars: CreateOrderVariables): (MutationRef<CreateOrderData, CreateOrderVariables> & { __angular?: false });
+export function createOrderRef(vars: CreateOrderVariables): MutationRef<CreateOrderData, CreateOrderVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function createOrderRef(dc: DataConnect, vars: CreateOrderVariables): (MutationRef<CreateOrderData, CreateOrderVariables> & { __angular?: false });
+export function createOrderRef(dc: DataConnect, vars: CreateOrderVariables): MutationRef<CreateOrderData, CreateOrderVariables>;
 
 export function createOrder(vars: CreateOrderVariables): MutationPromise<CreateOrderData, CreateOrderVariables>;
 export function createOrder(dc: DataConnect, vars: CreateOrderVariables): MutationPromise<CreateOrderData, CreateOrderVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function updateOrderByPaymentIntentIdRef(vars: UpdateOrderByPaymentIntentIdVariables): (MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables> & { __angular?: false });
+export function updateOrderByPaymentIntentIdRef(vars: UpdateOrderByPaymentIntentIdVariables): MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function updateOrderByPaymentIntentIdRef(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): (MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables> & { __angular?: false });
+export function updateOrderByPaymentIntentIdRef(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 
 export function updateOrderByPaymentIntentId(vars: UpdateOrderByPaymentIntentIdVariables): MutationPromise<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 export function updateOrderByPaymentIntentId(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): MutationPromise<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function updateOrderByChargeIdRef(vars?: UpdateOrderByChargeIdVariables): (MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables> & { __angular?: false });
+export function updateOrderByChargeIdRef(vars?: UpdateOrderByChargeIdVariables): MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function updateOrderByChargeIdRef(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): (MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables> & { __angular?: false });
+export function updateOrderByChargeIdRef(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 
 export function updateOrderByChargeId(vars?: UpdateOrderByChargeIdVariables): MutationPromise<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 export function updateOrderByChargeId(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): MutationPromise<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function createOrderItemRef(vars: CreateOrderItemVariables): (MutationRef<CreateOrderItemData, CreateOrderItemVariables> & { __angular?: false });
+export function createOrderItemRef(vars: CreateOrderItemVariables): MutationRef<CreateOrderItemData, CreateOrderItemVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function createOrderItemRef(dc: DataConnect, vars: CreateOrderItemVariables): (MutationRef<CreateOrderItemData, CreateOrderItemVariables> & { __angular?: false });
+export function createOrderItemRef(dc: DataConnect, vars: CreateOrderItemVariables): MutationRef<CreateOrderItemData, CreateOrderItemVariables>;
 
 export function createOrderItem(vars: CreateOrderItemVariables): MutationPromise<CreateOrderItemData, CreateOrderItemVariables>;
 export function createOrderItem(dc: DataConnect, vars: CreateOrderItemVariables): MutationPromise<CreateOrderItemData, CreateOrderItemVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function listCustomersRef(): (QueryRef<ListCustomersData, undefined> & { __angular?: false });
+export function listCustomersRef(): QueryRef<ListCustomersData, undefined>;
 /* Allow users to pass in custom DataConnect instances */
-export function listCustomersRef(dc: DataConnect): (QueryRef<ListCustomersData, undefined> & { __angular?: false });
+export function listCustomersRef(dc: DataConnect): QueryRef<ListCustomersData, undefined>;
 
 export function listCustomers(): QueryPromise<ListCustomersData, undefined>;
 export function listCustomers(dc: DataConnect): QueryPromise<ListCustomersData, undefined>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getReviewsByHandleRef(vars: GetReviewsByHandleVariables): (QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables> & { __angular?: false });
+export function getReviewsByHandleRef(vars: GetReviewsByHandleVariables): QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getReviewsByHandleRef(dc: DataConnect, vars: GetReviewsByHandleVariables): (QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables> & { __angular?: false });
+export function getReviewsByHandleRef(dc: DataConnect, vars: GetReviewsByHandleVariables): QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 
 export function getReviewsByHandle(vars: GetReviewsByHandleVariables): QueryPromise<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 export function getReviewsByHandle(dc: DataConnect, vars: GetReviewsByHandleVariables): QueryPromise<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getProductByHandleRef(vars: GetProductByHandleVariables): (QueryRef<GetProductByHandleData, GetProductByHandleVariables> & { __angular?: false });
+export function getProductByHandleRef(vars: GetProductByHandleVariables): QueryRef<GetProductByHandleData, GetProductByHandleVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getProductByHandleRef(dc: DataConnect, vars: GetProductByHandleVariables): (QueryRef<GetProductByHandleData, GetProductByHandleVariables> & { __angular?: false });
+export function getProductByHandleRef(dc: DataConnect, vars: GetProductByHandleVariables): QueryRef<GetProductByHandleData, GetProductByHandleVariables>;
 
 export function getProductByHandle(vars: GetProductByHandleVariables): QueryPromise<GetProductByHandleData, GetProductByHandleVariables>;
 export function getProductByHandle(dc: DataConnect, vars: GetProductByHandleVariables): QueryPromise<GetProductByHandleData, GetProductByHandleVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getCollectionByHandleRef(vars: GetCollectionByHandleVariables): (QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables> & { __angular?: false });
+export function getCollectionByHandleRef(vars: GetCollectionByHandleVariables): QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getCollectionByHandleRef(dc: DataConnect, vars: GetCollectionByHandleVariables): (QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables> & { __angular?: false });
+export function getCollectionByHandleRef(dc: DataConnect, vars: GetCollectionByHandleVariables): QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 
 export function getCollectionByHandle(vars: GetCollectionByHandleVariables): QueryPromise<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 export function getCollectionByHandle(dc: DataConnect, vars: GetCollectionByHandleVariables): QueryPromise<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getCollectionsByPageRef(vars?: GetCollectionsByPageVariables): (QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables> & { __angular?: false });
+export function getCollectionsByPageRef(vars?: GetCollectionsByPageVariables): QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getCollectionsByPageRef(dc: DataConnect, vars?: GetCollectionsByPageVariables): (QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables> & { __angular?: false });
+export function getCollectionsByPageRef(dc: DataConnect, vars?: GetCollectionsByPageVariables): QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 
 export function getCollectionsByPage(vars?: GetCollectionsByPageVariables): QueryPromise<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 export function getCollectionsByPage(dc: DataConnect, vars?: GetCollectionsByPageVariables): QueryPromise<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function searchProductDescriptionUsingL2similarityRef(vars: SearchProductDescriptionUsingL2similarityVariables): (QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables> & { __angular?: false });
+export function searchProductDescriptionUsingL2similarityRef(vars: SearchProductDescriptionUsingL2similarityVariables): QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function searchProductDescriptionUsingL2similarityRef(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): (QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables> & { __angular?: false });
+export function searchProductDescriptionUsingL2similarityRef(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 
 export function searchProductDescriptionUsingL2similarity(vars: SearchProductDescriptionUsingL2similarityVariables): QueryPromise<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 export function searchProductDescriptionUsingL2similarity(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): QueryPromise<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function searchProductTitleUsingL2similarityRef(vars: SearchProductTitleUsingL2similarityVariables): (QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables> & { __angular?: false });
+export function searchProductTitleUsingL2similarityRef(vars: SearchProductTitleUsingL2similarityVariables): QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function searchProductTitleUsingL2similarityRef(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): (QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables> & { __angular?: false });
+export function searchProductTitleUsingL2similarityRef(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 
 export function searchProductTitleUsingL2similarity(vars: SearchProductTitleUsingL2similarityVariables): QueryPromise<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 export function searchProductTitleUsingL2similarity(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): QueryPromise<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function searchProductReviewContentUsingL2similarityRef(vars: SearchProductReviewContentUsingL2similarityVariables): (QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables> & { __angular?: false });
+export function searchProductReviewContentUsingL2similarityRef(vars: SearchProductReviewContentUsingL2similarityVariables): QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function searchProductReviewContentUsingL2similarityRef(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): (QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables> & { __angular?: false });
+export function searchProductReviewContentUsingL2similarityRef(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 
 export function searchProductReviewContentUsingL2similarity(vars: SearchProductReviewContentUsingL2similarityVariables): QueryPromise<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 export function searchProductReviewContentUsingL2similarity(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): QueryPromise<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getOrdersByCustomerIdRef(vars: GetOrdersByCustomerIdVariables): (QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables> & { __angular?: false });
+export function getOrdersByCustomerIdRef(vars: GetOrdersByCustomerIdVariables): QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getOrdersByCustomerIdRef(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): (QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables> & { __angular?: false });
+export function getOrdersByCustomerIdRef(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 
 export function getOrdersByCustomerId(vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 export function getOrdersByCustomerId(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 
 
 /* Allow users to create refs without passing in DataConnect */
-export function getOrderByIdRef(vars: GetOrderByIdVariables): (QueryRef<GetOrderByIdData, GetOrderByIdVariables> & { __angular?: false });
+export function getOrderByIdRef(vars: GetOrderByIdVariables): QueryRef<GetOrderByIdData, GetOrderByIdVariables>;
 /* Allow users to pass in custom DataConnect instances */
-export function getOrderByIdRef(dc: DataConnect, vars: GetOrderByIdVariables): (QueryRef<GetOrderByIdData, GetOrderByIdVariables> & { __angular?: false });
+export function getOrderByIdRef(dc: DataConnect, vars: GetOrderByIdVariables): QueryRef<GetOrderByIdData, GetOrderByIdVariables>;
 
 export function getOrderById(vars: GetOrderByIdVariables): QueryPromise<GetOrderByIdData, GetOrderByIdVariables>;
 export function getOrderById(dc: DataConnect, vars: GetOrderByIdVariables): QueryPromise<GetOrderByIdData, GetOrderByIdVariables>;

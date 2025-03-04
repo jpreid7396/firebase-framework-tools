@@ -1,6 +1,5 @@
 import { queryRef, executeQuery, mutationRef, executeMutation, validateArgs } from 'firebase/data-connect';
 
-
 export const connectorConfig = {
   connector: 'default',
   service: 'julia-data-connect',
@@ -166,3 +165,4 @@ export function getOrderByIdRef(dcOrVars, vars) {
 export function getOrderById(dcOrVars, vars) {
   return executeQuery(getOrderByIdRef(dcOrVars, vars));
 }
+

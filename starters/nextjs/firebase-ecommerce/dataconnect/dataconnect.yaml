@@ -8,5 +8,5 @@ schema:
       database: "julia-database"
       cloudSql:
         instanceId: "julia-cloud-sql"
-      # schemaValidation: "COMPATIBLE"
+        schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]

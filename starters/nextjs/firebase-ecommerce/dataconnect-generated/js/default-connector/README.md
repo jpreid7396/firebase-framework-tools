@@ -56,13 +56,13 @@ You can execute the `ListCustomers` query using the following action shortcut fu
 ```javascript
 listCustomers(): QueryPromise<ListCustomersData, undefined>;
 
-listCustomersRef(): (QueryRef<ListCustomersData, undefined> & { __angular?: false });
+listCustomersRef(): QueryRef<ListCustomersData, undefined>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 listCustomers(dc: DataConnect): QueryPromise<ListCustomersData, undefined>;
 
-listCustomersRef(dc: DataConnect): (QueryRef<ListCustomersData, undefined> & { __angular?: false });
+listCustomersRef(dc: DataConnect): QueryRef<ListCustomersData, undefined>;
 ```
 
 ### Variables
@@ -135,13 +135,13 @@ You can execute the `GetReviewsByHandle` query using the following action shortc
 ```javascript
 getReviewsByHandle(vars: GetReviewsByHandleVariables): QueryPromise<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 
-getReviewsByHandleRef(vars: GetReviewsByHandleVariables): (QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables> & { __angular?: false });
+getReviewsByHandleRef(vars: GetReviewsByHandleVariables): QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getReviewsByHandle(dc: DataConnect, vars: GetReviewsByHandleVariables): QueryPromise<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 
-getReviewsByHandleRef(dc: DataConnect, vars: GetReviewsByHandleVariables): (QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables> & { __angular?: false });
+getReviewsByHandleRef(dc: DataConnect, vars: GetReviewsByHandleVariables): QueryRef<GetReviewsByHandleData, GetReviewsByHandleVariables>;
 ```
 
 ### Variables
@@ -239,13 +239,13 @@ You can execute the `GetProductByHandle` query using the following action shortc
 ```javascript
 getProductByHandle(vars: GetProductByHandleVariables): QueryPromise<GetProductByHandleData, GetProductByHandleVariables>;
 
-getProductByHandleRef(vars: GetProductByHandleVariables): (QueryRef<GetProductByHandleData, GetProductByHandleVariables> & { __angular?: false });
+getProductByHandleRef(vars: GetProductByHandleVariables): QueryRef<GetProductByHandleData, GetProductByHandleVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getProductByHandle(dc: DataConnect, vars: GetProductByHandleVariables): QueryPromise<GetProductByHandleData, GetProductByHandleVariables>;
 
-getProductByHandleRef(dc: DataConnect, vars: GetProductByHandleVariables): (QueryRef<GetProductByHandleData, GetProductByHandleVariables> & { __angular?: false });
+getProductByHandleRef(dc: DataConnect, vars: GetProductByHandleVariables): QueryRef<GetProductByHandleData, GetProductByHandleVariables>;
 ```
 
 ### Variables
@@ -368,13 +368,13 @@ You can execute the `GetCollectionByHandle` query using the following action sho
 ```javascript
 getCollectionByHandle(vars: GetCollectionByHandleVariables): QueryPromise<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 
-getCollectionByHandleRef(vars: GetCollectionByHandleVariables): (QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables> & { __angular?: false });
+getCollectionByHandleRef(vars: GetCollectionByHandleVariables): QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getCollectionByHandle(dc: DataConnect, vars: GetCollectionByHandleVariables): QueryPromise<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 
-getCollectionByHandleRef(dc: DataConnect, vars: GetCollectionByHandleVariables): (QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables> & { __angular?: false });
+getCollectionByHandleRef(dc: DataConnect, vars: GetCollectionByHandleVariables): QueryRef<GetCollectionByHandleData, GetCollectionByHandleVariables>;
 ```
 
 ### Variables
@@ -506,13 +506,13 @@ You can execute the `GetCollectionsByPage` query using the following action shor
 ```javascript
 getCollectionsByPage(vars?: GetCollectionsByPageVariables): QueryPromise<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 
-getCollectionsByPageRef(vars?: GetCollectionsByPageVariables): (QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables> & { __angular?: false });
+getCollectionsByPageRef(vars?: GetCollectionsByPageVariables): QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getCollectionsByPage(dc: DataConnect, vars?: GetCollectionsByPageVariables): QueryPromise<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 
-getCollectionsByPageRef(dc: DataConnect, vars?: GetCollectionsByPageVariables): (QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables> & { __angular?: false });
+getCollectionsByPageRef(dc: DataConnect, vars?: GetCollectionsByPageVariables): QueryRef<GetCollectionsByPageData, GetCollectionsByPageVariables>;
 ```
 
 ### Variables
@@ -636,13 +636,13 @@ You can execute the `SearchProductDescriptionUsingL2Similarity` query using the 
 ```javascript
 searchProductDescriptionUsingL2similarity(vars: SearchProductDescriptionUsingL2similarityVariables): QueryPromise<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 
-searchProductDescriptionUsingL2similarityRef(vars: SearchProductDescriptionUsingL2similarityVariables): (QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables> & { __angular?: false });
+searchProductDescriptionUsingL2similarityRef(vars: SearchProductDescriptionUsingL2similarityVariables): QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 searchProductDescriptionUsingL2similarity(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): QueryPromise<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 
-searchProductDescriptionUsingL2similarityRef(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): (QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables> & { __angular?: false });
+searchProductDescriptionUsingL2similarityRef(dc: DataConnect, vars: SearchProductDescriptionUsingL2similarityVariables): QueryRef<SearchProductDescriptionUsingL2similarityData, SearchProductDescriptionUsingL2similarityVariables>;
 ```
 
 ### Variables
@@ -732,13 +732,13 @@ You can execute the `SearchProductTitleUsingL2Similarity` query using the follow
 ```javascript
 searchProductTitleUsingL2similarity(vars: SearchProductTitleUsingL2similarityVariables): QueryPromise<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 
-searchProductTitleUsingL2similarityRef(vars: SearchProductTitleUsingL2similarityVariables): (QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables> & { __angular?: false });
+searchProductTitleUsingL2similarityRef(vars: SearchProductTitleUsingL2similarityVariables): QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 searchProductTitleUsingL2similarity(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): QueryPromise<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 
-searchProductTitleUsingL2similarityRef(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): (QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables> & { __angular?: false });
+searchProductTitleUsingL2similarityRef(dc: DataConnect, vars: SearchProductTitleUsingL2similarityVariables): QueryRef<SearchProductTitleUsingL2similarityData, SearchProductTitleUsingL2similarityVariables>;
 ```
 
 ### Variables
@@ -828,13 +828,13 @@ You can execute the `SearchProductReviewContentUsingL2Similarity` query using th
 ```javascript
 searchProductReviewContentUsingL2similarity(vars: SearchProductReviewContentUsingL2similarityVariables): QueryPromise<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 
-searchProductReviewContentUsingL2similarityRef(vars: SearchProductReviewContentUsingL2similarityVariables): (QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables> & { __angular?: false });
+searchProductReviewContentUsingL2similarityRef(vars: SearchProductReviewContentUsingL2similarityVariables): QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 searchProductReviewContentUsingL2similarity(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): QueryPromise<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 
-searchProductReviewContentUsingL2similarityRef(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): (QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables> & { __angular?: false });
+searchProductReviewContentUsingL2similarityRef(dc: DataConnect, vars: SearchProductReviewContentUsingL2similarityVariables): QueryRef<SearchProductReviewContentUsingL2similarityData, SearchProductReviewContentUsingL2similarityVariables>;
 ```
 
 ### Variables
@@ -926,13 +926,13 @@ You can execute the `GetOrdersByCustomerId` query using the following action sho
 ```javascript
 getOrdersByCustomerId(vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 
-getOrdersByCustomerIdRef(vars: GetOrdersByCustomerIdVariables): (QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables> & { __angular?: false });
+getOrdersByCustomerIdRef(vars: GetOrdersByCustomerIdVariables): QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getOrdersByCustomerId(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 
-getOrdersByCustomerIdRef(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): (QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables> & { __angular?: false });
+getOrdersByCustomerIdRef(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): QueryRef<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 ```
 
 ### Variables
@@ -1044,13 +1044,13 @@ You can execute the `GetOrderById` query using the following action shortcut fun
 ```javascript
 getOrderById(vars: GetOrderByIdVariables): QueryPromise<GetOrderByIdData, GetOrderByIdVariables>;
 
-getOrderByIdRef(vars: GetOrderByIdVariables): (QueryRef<GetOrderByIdData, GetOrderByIdVariables> & { __angular?: false });
+getOrderByIdRef(vars: GetOrderByIdVariables): QueryRef<GetOrderByIdData, GetOrderByIdVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```javascript
 getOrderById(dc: DataConnect, vars: GetOrderByIdVariables): QueryPromise<GetOrderByIdData, GetOrderByIdVariables>;
 
-getOrderByIdRef(dc: DataConnect, vars: GetOrderByIdVariables): (QueryRef<GetOrderByIdData, GetOrderByIdVariables> & { __angular?: false });
+getOrderByIdRef(dc: DataConnect, vars: GetOrderByIdVariables): QueryRef<GetOrderByIdData, GetOrderByIdVariables>;
 ```
 
 ### Variables
@@ -1173,13 +1173,13 @@ You can execute the `UpsertCustomer` mutation using the following action shortcu
 ```javascript
 upsertCustomer(vars: UpsertCustomerVariables): MutationPromise<UpsertCustomerData, UpsertCustomerVariables>;
 
-upsertCustomerRef(vars: UpsertCustomerVariables): (MutationRef<UpsertCustomerData, UpsertCustomerVariables> & { __angular?: false });
+upsertCustomerRef(vars: UpsertCustomerVariables): MutationRef<UpsertCustomerData, UpsertCustomerVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 upsertCustomer(dc: DataConnect, vars: UpsertCustomerVariables): MutationPromise<UpsertCustomerData, UpsertCustomerVariables>;
 
-upsertCustomerRef(dc: DataConnect, vars: UpsertCustomerVariables): (MutationRef<UpsertCustomerData, UpsertCustomerVariables> & { __angular?: false });
+upsertCustomerRef(dc: DataConnect, vars: UpsertCustomerVariables): MutationRef<UpsertCustomerData, UpsertCustomerVariables>;
 ```
 
 ### Variables
@@ -1277,13 +1277,13 @@ You can execute the `CreateProductReview` mutation using the following action sh
 ```javascript
 createProductReview(vars: CreateProductReviewVariables): MutationPromise<CreateProductReviewData, CreateProductReviewVariables>;
 
-createProductReviewRef(vars: CreateProductReviewVariables): (MutationRef<CreateProductReviewData, CreateProductReviewVariables> & { __angular?: false });
+createProductReviewRef(vars: CreateProductReviewVariables): MutationRef<CreateProductReviewData, CreateProductReviewVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 createProductReview(dc: DataConnect, vars: CreateProductReviewVariables): MutationPromise<CreateProductReviewData, CreateProductReviewVariables>;
 
-createProductReviewRef(dc: DataConnect, vars: CreateProductReviewVariables): (MutationRef<CreateProductReviewData, CreateProductReviewVariables> & { __angular?: false });
+createProductReviewRef(dc: DataConnect, vars: CreateProductReviewVariables): MutationRef<CreateProductReviewData, CreateProductReviewVariables>;
 ```
 
 ### Variables
@@ -1378,13 +1378,13 @@ You can execute the `CreateOrder` mutation using the following action shortcut f
 ```javascript
 createOrder(vars: CreateOrderVariables): MutationPromise<CreateOrderData, CreateOrderVariables>;
 
-createOrderRef(vars: CreateOrderVariables): (MutationRef<CreateOrderData, CreateOrderVariables> & { __angular?: false });
+createOrderRef(vars: CreateOrderVariables): MutationRef<CreateOrderData, CreateOrderVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 createOrder(dc: DataConnect, vars: CreateOrderVariables): MutationPromise<CreateOrderData, CreateOrderVariables>;
 
-createOrderRef(dc: DataConnect, vars: CreateOrderVariables): (MutationRef<CreateOrderData, CreateOrderVariables> & { __angular?: false });
+createOrderRef(dc: DataConnect, vars: CreateOrderVariables): MutationRef<CreateOrderData, CreateOrderVariables>;
 ```
 
 ### Variables
@@ -1497,13 +1497,13 @@ You can execute the `UpdateOrderByPaymentIntentId` mutation using the following 
 ```javascript
 updateOrderByPaymentIntentId(vars: UpdateOrderByPaymentIntentIdVariables): MutationPromise<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 
-updateOrderByPaymentIntentIdRef(vars: UpdateOrderByPaymentIntentIdVariables): (MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables> & { __angular?: false });
+updateOrderByPaymentIntentIdRef(vars: UpdateOrderByPaymentIntentIdVariables): MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 updateOrderByPaymentIntentId(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): MutationPromise<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 
-updateOrderByPaymentIntentIdRef(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): (MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables> & { __angular?: false });
+updateOrderByPaymentIntentIdRef(dc: DataConnect, vars: UpdateOrderByPaymentIntentIdVariables): MutationRef<UpdateOrderByPaymentIntentIdData, UpdateOrderByPaymentIntentIdVariables>;
 ```
 
 ### Variables
@@ -1604,13 +1604,13 @@ You can execute the `UpdateOrderByChargeId` mutation using the following action 
 ```javascript
 updateOrderByChargeId(vars?: UpdateOrderByChargeIdVariables): MutationPromise<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 
-updateOrderByChargeIdRef(vars?: UpdateOrderByChargeIdVariables): (MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables> & { __angular?: false });
+updateOrderByChargeIdRef(vars?: UpdateOrderByChargeIdVariables): MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 updateOrderByChargeId(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): MutationPromise<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 
-updateOrderByChargeIdRef(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): (MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables> & { __angular?: false });
+updateOrderByChargeIdRef(dc: DataConnect, vars?: UpdateOrderByChargeIdVariables): MutationRef<UpdateOrderByChargeIdData, UpdateOrderByChargeIdVariables>;
 ```
 
 ### Variables
@@ -1712,13 +1712,13 @@ You can execute the `CreateOrderItem` mutation using the following action shortc
 ```javascript
 createOrderItem(vars: CreateOrderItemVariables): MutationPromise<CreateOrderItemData, CreateOrderItemVariables>;
 
-createOrderItemRef(vars: CreateOrderItemVariables): (MutationRef<CreateOrderItemData, CreateOrderItemVariables> & { __angular?: false });
+createOrderItemRef(vars: CreateOrderItemVariables): MutationRef<CreateOrderItemData, CreateOrderItemVariables>;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `MutationRef` function.
 ```javascript
 createOrderItem(dc: DataConnect, vars: CreateOrderItemVariables): MutationPromise<CreateOrderItemData, CreateOrderItemVariables>;
 
-createOrderItemRef(dc: DataConnect, vars: CreateOrderItemVariables): (MutationRef<CreateOrderItemData, CreateOrderItemVariables> & { __angular?: false });
+createOrderItemRef(dc: DataConnect, vars: CreateOrderItemVariables): MutationRef<CreateOrderItemData, CreateOrderItemVariables>;
 ```
 
 ### Variables
