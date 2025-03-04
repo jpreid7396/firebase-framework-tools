@@ -568,7 +568,7 @@ mutation CreateProductCollections {
       }
       {
         collectionId: "f398139261204706aa624fd9369fc2ce"
-        productId: "6eff69de94f64f38adefc40adfd37c93"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         displayPosition: 4
       }
       # Winter Essentials (572ddfc27d164ea1833a4cbe65a42cfc)
@@ -589,7 +589,7 @@ mutation CreateProductCollections {
       }
       {
         collectionId: "572ddfc27d164ea1833a4cbe65a42cfc"
-        productId: "6eff69de94f64f38adefc40adfd37c93"
+        productId: "84ee5a0646f84ad4b4d82fc8aa0a6696"
         displayPosition: 4
       }
     ]

@@ -41,3 +41,4 @@ vsce-debug.log*
 firebase-debug.log*
 firebase-debug.*
 .firebase
+apphosting.local.yaml
