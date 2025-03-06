@@ -1,6 +1,7 @@
 import { connectorConfig } from '@firebasegen/default-connector'
 import { initializeApp, getApps } from 'firebase/app'
-import { getDataConnect } from 'firebase/data-connect'
+import { connectDataConnectEmulator, getDataConnect } from 'firebase/data-connect';
+
 
 /* const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,3 +15,4 @@ import { getDataConnect } from 'firebase/data-connect'
 const firebase_app = getApps().length === 0 ? initializeApp() : getApps()[0]
 
 export const dc = getDataConnect(firebase_app, connectorConfig)
+connectDataConnectEmulator(dc, "localhost", 9399);

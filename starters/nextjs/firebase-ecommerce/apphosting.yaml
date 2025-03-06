@@ -7,18 +7,18 @@ runConfig:
 env:
   # Grant access to secrets in Cloud Secret Manager.
   # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
-  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: AIzaSyDWuVuxVQHE2R48eno5EezFQna6pMbufc4
-  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: nextjs-ecommerce-julia.firebaseapp.com
-  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-    value: nextjs-ecommerce-julia
-  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-    value: nextjs-ecommerce-julia.firebasestorage.app
-  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-    value: 523528123585
-  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    value: 1:523528123585:web:9beae3d259a22ef005d040
+  # - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+  #   value: AIzaSyDWuVuxVQHE2R48eno5EezFQna6pMbufc4
+  # - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+  #   value: nextjs-ecommerce-julia.firebaseapp.com
+  # - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+  #   value: nextjs-ecommerce-julia
+  # - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+  #   value: nextjs-ecommerce-julia.firebasestorage.app
+  # - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+  #   value: 523528123585
+  # - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+  #   value: 1:523528123585:web:9beae3d259a22ef005d040
   - variable: GOOGLE_API_KEY
     secret: google-api-key
   - variable: STRIPE_ACCOUNT_ID
