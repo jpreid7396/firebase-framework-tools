@@ -1,23 +1,45 @@
-#  Generated TypeScript README
+# Table of Contents
+- [**Overview**](#generated-typescript-readme)
+- [**Accessing the connector**](#accessing-the-connector)
+  - [*Connecting to the local Emulator*](#connecting-to-the-local-emulator)
+- [**Queries**](#queries)
+  - [*ListCustomers*](#listcustomers)
+  - [*GetReviewsByHandle*](#getreviewsbyhandle)
+  - [*GetProductByHandle*](#getproductbyhandle)
+  - [*GetCollectionByHandle*](#getcollectionbyhandle)
+  - [*GetCollectionsByPage*](#getcollectionsbypage)
+  - [*SearchProductDescriptionUsingL2Similarity*](#searchproductdescriptionusingl2similarity)
+  - [*SearchProductTitleUsingL2Similarity*](#searchproducttitleusingl2similarity)
+  - [*SearchProductReviewContentUsingL2Similarity*](#searchproductreviewcontentusingl2similarity)
+  - [*GetOrdersByCustomerId*](#getordersbycustomerid)
+  - [*GetOrderById*](#getorderbyid)
+- [**Mutations**](#mutations)
+  - [*UpsertCustomer*](#upsertcustomer)
+  - [*CreateProductReview*](#createproductreview)
+  - [*CreateOrder*](#createorder)
+  - [*UpdateOrderByPaymentIntentId*](#updateorderbypaymentintentid)
+  - [*UpdateOrderByChargeId*](#updateorderbychargeid)
+  - [*CreateOrderItem*](#createorderitem)
+
+# Generated TypeScript README
 This README will guide you through the process of using the generated TypeScript SDK package for the connector `default`. It will also provide examples on how to use your generated SDK to call your Data Connect queries and mutations.
 
 ***NOTE:** This README is generated alongside the generated SDK. If you make changes to this file, they will be overwritten when the SDK is regenerated.*
 
 You can use this generated SDK by importing from the package `@firebasegen/default-connector` as shown below. Both CommonJS and ESM imports are supported.
+
 You can also follow the instructions from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#set-client).
 
 # Accessing the connector
-A connector is a collection of queries and mutations. One SDK is generated for each connector - this SDK is generated for the connector `default`.
+A connector is a collection of Queries and Mutations. One SDK is generated for each connector - this SDK is generated for the connector `default`.
 
 You can find more information about connectors in the [Data Connect documentation](https://firebase.google.com/docs/data-connect#how-does).
-
-In order to call Data Connect queries and mutations, you need to create an instance of the connector in your application code.
 
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig } from '@firebasegen/default-connector';
 
-const connector: DataConnect = getDataConnect(connectorConfig);
+const dataConnect = getDataConnect(connectorConfig);
 ```
 
 ## Connecting to the local Emulator
@@ -27,17 +49,17 @@ To connect to the emulator, you can use the following code.
 You can also follow the emulator instructions from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#instrument-clients).
 
 ```javascript
-// add connectDataConnectEmulator to your imports 
 import { connectDataConnectEmulator, getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig } from '@firebasegen/default-connector';
 
-const connector: DataConnect = getDataConnect(connectorConfig);
-connectDataConnectEmulator(connector, 'localhost', 9399);
+const dataConnect = getDataConnect(connectorConfig);
+connectDataConnectEmulator(dataConnect, 'localhost', 9399);
 ```
 
-After it's initialized, you can call your Data Connect [queries](#queries) and [mutations](#mutations) from your generated SDK. 
+After it's initialized, you can call your Data Connect [queries](#queries) and [mutations](#mutations) from your generated SDK.
 
 # Queries
+
 There are two ways to execute a Data Connect Query using the generated Web SDK:
 - Using a Query Reference function, which returns a `QueryRef`
   - The `QueryRef` can be used as an argument to `executeQuery()`, which will execute the Query and return a `QueryPromise`
@@ -47,7 +69,7 @@ There are two ways to execute a Data Connect Query using the generated Web SDK:
 The following is true for both the action shortcut function and the `QueryRef` function:
 - The `QueryPromise` returned will resolve to the result of the Query once it has finished executing
 - If the Query accepts arguments, both the action shortcut function and the `QueryRef` function accept a single argument: an object that contains all the required variables (and the optional variables) for the Query
-- Both functions can be called with or without passing in a `DataConnect` instance as an argument
+- Both functions can be called with or without passing in a `DataConnect` instance as an argument. If no `DataConnect` argument is passed in, then the generated SDK will call `getDataConnect(connectorConfig)` behind the scenes for you.
 
 Below are examples of how to use the `default` connector's generated functions to execute each query. You can also follow the examples from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#using-queries).
 
@@ -68,7 +90,7 @@ listCustomersRef(dc: DataConnect): QueryRef<ListCustomersData, undefined>;
 ### Variables
 The `ListCustomers` query has no variables.
 ### Return Type
-Recall that executing the `ListCustomers` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `ListCustomers` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `ListCustomersData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -87,13 +109,14 @@ export interface ListCustomersData {
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, listCustomers } from '@firebasegen/default-connector';
 
+
 // Call the `listCustomers()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
 const { data } = await listCustomers();
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await listCustomers(connector);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await listCustomers(dataConnect);
 
 console.log(data.customers);
 
@@ -110,12 +133,13 @@ listCustomers().then((response) => {
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, listCustomersRef } from '@firebasegen/default-connector';
 
+
 // Call the `listCustomersRef()` function to get a reference to the query.
 const ref = listCustomersRef();
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = listCustomersRef(connector);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = listCustomersRef(dataConnect);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -153,7 +177,7 @@ export interface GetReviewsByHandleVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetReviewsByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetReviewsByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetReviewsByHandleData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -178,10 +202,11 @@ export interface GetReviewsByHandleData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getReviewsByHandle, GetReviewsByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetReviewsByHandle` query requires an argument of type `GetReviewsByHandleVariables`:
 const getReviewsByHandleVars: GetReviewsByHandleVariables = {
   handle: ..., 
-}
+};
 
 // Call the `getReviewsByHandle()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -190,8 +215,8 @@ const { data } = await getReviewsByHandle(getReviewsByHandleVars);
 const { data } = await getReviewsByHandle({ handle: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getReviewsByHandle(connector, getReviewsByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getReviewsByHandle(dataConnect, getReviewsByHandleVars);
 
 console.log(data.products);
 
@@ -207,10 +232,11 @@ getReviewsByHandle(getReviewsByHandleVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getReviewsByHandleRef, GetReviewsByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetReviewsByHandle` query requires an argument of type `GetReviewsByHandleVariables`:
 const getReviewsByHandleVars: GetReviewsByHandleVariables = {
   handle: ..., 
-}
+};
 
 // Call the `getReviewsByHandleRef()` function to get a reference to the query.
 const ref = getReviewsByHandleRef(getReviewsByHandleVars);
@@ -218,8 +244,8 @@ const ref = getReviewsByHandleRef(getReviewsByHandleVars);
 const ref = getReviewsByHandleRef({ handle: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getReviewsByHandleRef(connector, getReviewsByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getReviewsByHandleRef(dataConnect, getReviewsByHandleVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -257,7 +283,7 @@ export interface GetProductByHandleVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetProductByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetProductByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetProductByHandleData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -307,10 +333,11 @@ export interface GetProductByHandleData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getProductByHandle, GetProductByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetProductByHandle` query requires an argument of type `GetProductByHandleVariables`:
 const getProductByHandleVars: GetProductByHandleVariables = {
   handle: ..., 
-}
+};
 
 // Call the `getProductByHandle()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -319,8 +346,8 @@ const { data } = await getProductByHandle(getProductByHandleVars);
 const { data } = await getProductByHandle({ handle: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getProductByHandle(connector, getProductByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getProductByHandle(dataConnect, getProductByHandleVars);
 
 console.log(data.product);
 
@@ -336,10 +363,11 @@ getProductByHandle(getProductByHandleVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getProductByHandleRef, GetProductByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetProductByHandle` query requires an argument of type `GetProductByHandleVariables`:
 const getProductByHandleVars: GetProductByHandleVariables = {
   handle: ..., 
-}
+};
 
 // Call the `getProductByHandleRef()` function to get a reference to the query.
 const ref = getProductByHandleRef(getProductByHandleVars);
@@ -347,8 +375,8 @@ const ref = getProductByHandleRef(getProductByHandleVars);
 const ref = getProductByHandleRef({ handle: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getProductByHandleRef(connector, getProductByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getProductByHandleRef(dataConnect, getProductByHandleVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -387,7 +415,7 @@ export interface GetCollectionByHandleVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetCollectionByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetCollectionByHandle` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetCollectionByHandleData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -443,11 +471,12 @@ export interface GetCollectionByHandleData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getCollectionByHandle, GetCollectionByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetCollectionByHandle` query requires an argument of type `GetCollectionByHandleVariables`:
 const getCollectionByHandleVars: GetCollectionByHandleVariables = {
   handle: ..., 
   page: ..., // optional
-}
+};
 
 // Call the `getCollectionByHandle()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -456,8 +485,8 @@ const { data } = await getCollectionByHandle(getCollectionByHandleVars);
 const { data } = await getCollectionByHandle({ handle: ..., page: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getCollectionByHandle(connector, getCollectionByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getCollectionByHandle(dataConnect, getCollectionByHandleVars);
 
 console.log(data.collections);
 
@@ -473,11 +502,12 @@ getCollectionByHandle(getCollectionByHandleVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getCollectionByHandleRef, GetCollectionByHandleVariables } from '@firebasegen/default-connector';
+
 // The `GetCollectionByHandle` query requires an argument of type `GetCollectionByHandleVariables`:
 const getCollectionByHandleVars: GetCollectionByHandleVariables = {
   handle: ..., 
   page: ..., // optional
-}
+};
 
 // Call the `getCollectionByHandleRef()` function to get a reference to the query.
 const ref = getCollectionByHandleRef(getCollectionByHandleVars);
@@ -485,8 +515,8 @@ const ref = getCollectionByHandleRef(getCollectionByHandleVars);
 const ref = getCollectionByHandleRef({ handle: ..., page: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getCollectionByHandleRef(connector, getCollectionByHandleVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getCollectionByHandleRef(dataConnect, getCollectionByHandleVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -524,7 +554,7 @@ export interface GetCollectionsByPageVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetCollectionsByPage` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetCollectionsByPage` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetCollectionsByPageData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -571,10 +601,11 @@ export interface GetCollectionsByPageData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getCollectionsByPage, GetCollectionsByPageVariables } from '@firebasegen/default-connector';
+
 // The `GetCollectionsByPage` query has an optional argument of type `GetCollectionsByPageVariables`:
 const getCollectionsByPageVars: GetCollectionsByPageVariables = {
   page: ..., // optional
-}
+};
 
 // Call the `getCollectionsByPage()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -585,8 +616,8 @@ const { data } = await getCollectionsByPage({ page: ..., });
 const { data } = await getCollectionsByPage();
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getCollectionsByPage(connector, getCollectionsByPageVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getCollectionsByPage(dataConnect, getCollectionsByPageVars);
 
 console.log(data.collections);
 
@@ -602,10 +633,11 @@ getCollectionsByPage(getCollectionsByPageVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getCollectionsByPageRef, GetCollectionsByPageVariables } from '@firebasegen/default-connector';
+
 // The `GetCollectionsByPage` query has an optional argument of type `GetCollectionsByPageVariables`:
 const getCollectionsByPageVars: GetCollectionsByPageVariables = {
   page: ..., // optional
-}
+};
 
 // Call the `getCollectionsByPageRef()` function to get a reference to the query.
 const ref = getCollectionsByPageRef(getCollectionsByPageVars);
@@ -615,8 +647,8 @@ const ref = getCollectionsByPageRef({ page: ..., });
 const ref = getCollectionsByPageRef();
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getCollectionsByPageRef(connector, getCollectionsByPageVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getCollectionsByPageRef(dataConnect, getCollectionsByPageVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -654,7 +686,7 @@ export interface SearchProductDescriptionUsingL2similarityVariables {
 }
 ```
 ### Return Type
-Recall that executing the `SearchProductDescriptionUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `SearchProductDescriptionUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `SearchProductDescriptionUsingL2similarityData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -671,10 +703,11 @@ export interface SearchProductDescriptionUsingL2similarityData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductDescriptionUsingL2similarity, SearchProductDescriptionUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductDescriptionUsingL2Similarity` query requires an argument of type `SearchProductDescriptionUsingL2similarityVariables`:
 const searchProductDescriptionUsingL2similarityVars: SearchProductDescriptionUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductDescriptionUsingL2similarity()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -683,8 +716,8 @@ const { data } = await searchProductDescriptionUsingL2similarity(searchProductDe
 const { data } = await searchProductDescriptionUsingL2similarity({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await searchProductDescriptionUsingL2similarity(connector, searchProductDescriptionUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await searchProductDescriptionUsingL2similarity(dataConnect, searchProductDescriptionUsingL2similarityVars);
 
 console.log(data.products_descriptionEmbedding_similarity);
 
@@ -700,10 +733,11 @@ searchProductDescriptionUsingL2similarity(searchProductDescriptionUsingL2similar
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductDescriptionUsingL2similarityRef, SearchProductDescriptionUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductDescriptionUsingL2Similarity` query requires an argument of type `SearchProductDescriptionUsingL2similarityVariables`:
 const searchProductDescriptionUsingL2similarityVars: SearchProductDescriptionUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductDescriptionUsingL2similarityRef()` function to get a reference to the query.
 const ref = searchProductDescriptionUsingL2similarityRef(searchProductDescriptionUsingL2similarityVars);
@@ -711,8 +745,8 @@ const ref = searchProductDescriptionUsingL2similarityRef(searchProductDescriptio
 const ref = searchProductDescriptionUsingL2similarityRef({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = searchProductDescriptionUsingL2similarityRef(connector, searchProductDescriptionUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = searchProductDescriptionUsingL2similarityRef(dataConnect, searchProductDescriptionUsingL2similarityVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -750,7 +784,7 @@ export interface SearchProductTitleUsingL2similarityVariables {
 }
 ```
 ### Return Type
-Recall that executing the `SearchProductTitleUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `SearchProductTitleUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `SearchProductTitleUsingL2similarityData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -767,10 +801,11 @@ export interface SearchProductTitleUsingL2similarityData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductTitleUsingL2similarity, SearchProductTitleUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductTitleUsingL2Similarity` query requires an argument of type `SearchProductTitleUsingL2similarityVariables`:
 const searchProductTitleUsingL2similarityVars: SearchProductTitleUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductTitleUsingL2similarity()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -779,8 +814,8 @@ const { data } = await searchProductTitleUsingL2similarity(searchProductTitleUsi
 const { data } = await searchProductTitleUsingL2similarity({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await searchProductTitleUsingL2similarity(connector, searchProductTitleUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await searchProductTitleUsingL2similarity(dataConnect, searchProductTitleUsingL2similarityVars);
 
 console.log(data.products_titleEmbedding_similarity);
 
@@ -796,10 +831,11 @@ searchProductTitleUsingL2similarity(searchProductTitleUsingL2similarityVars).the
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductTitleUsingL2similarityRef, SearchProductTitleUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductTitleUsingL2Similarity` query requires an argument of type `SearchProductTitleUsingL2similarityVariables`:
 const searchProductTitleUsingL2similarityVars: SearchProductTitleUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductTitleUsingL2similarityRef()` function to get a reference to the query.
 const ref = searchProductTitleUsingL2similarityRef(searchProductTitleUsingL2similarityVars);
@@ -807,8 +843,8 @@ const ref = searchProductTitleUsingL2similarityRef(searchProductTitleUsingL2simi
 const ref = searchProductTitleUsingL2similarityRef({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = searchProductTitleUsingL2similarityRef(connector, searchProductTitleUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = searchProductTitleUsingL2similarityRef(dataConnect, searchProductTitleUsingL2similarityVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -846,7 +882,7 @@ export interface SearchProductReviewContentUsingL2similarityVariables {
 }
 ```
 ### Return Type
-Recall that executing the `SearchProductReviewContentUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `SearchProductReviewContentUsingL2Similarity` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `SearchProductReviewContentUsingL2similarityData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -865,10 +901,11 @@ export interface SearchProductReviewContentUsingL2similarityData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductReviewContentUsingL2similarity, SearchProductReviewContentUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductReviewContentUsingL2Similarity` query requires an argument of type `SearchProductReviewContentUsingL2similarityVariables`:
 const searchProductReviewContentUsingL2similarityVars: SearchProductReviewContentUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductReviewContentUsingL2similarity()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -877,8 +914,8 @@ const { data } = await searchProductReviewContentUsingL2similarity(searchProduct
 const { data } = await searchProductReviewContentUsingL2similarity({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await searchProductReviewContentUsingL2similarity(connector, searchProductReviewContentUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await searchProductReviewContentUsingL2similarity(dataConnect, searchProductReviewContentUsingL2similarityVars);
 
 console.log(data.productReviews_contentEmbedding_similarity);
 
@@ -894,10 +931,11 @@ searchProductReviewContentUsingL2similarity(searchProductReviewContentUsingL2sim
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductReviewContentUsingL2similarityRef, SearchProductReviewContentUsingL2similarityVariables } from '@firebasegen/default-connector';
+
 // The `SearchProductReviewContentUsingL2Similarity` query requires an argument of type `SearchProductReviewContentUsingL2similarityVariables`:
 const searchProductReviewContentUsingL2similarityVars: SearchProductReviewContentUsingL2similarityVariables = {
   query: ..., 
-}
+};
 
 // Call the `searchProductReviewContentUsingL2similarityRef()` function to get a reference to the query.
 const ref = searchProductReviewContentUsingL2similarityRef(searchProductReviewContentUsingL2similarityVars);
@@ -905,8 +943,8 @@ const ref = searchProductReviewContentUsingL2similarityRef(searchProductReviewCo
 const ref = searchProductReviewContentUsingL2similarityRef({ query: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = searchProductReviewContentUsingL2similarityRef(connector, searchProductReviewContentUsingL2similarityVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = searchProductReviewContentUsingL2similarityRef(dataConnect, searchProductReviewContentUsingL2similarityVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -944,7 +982,7 @@ export interface GetOrdersByCustomerIdVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetOrdersByCustomerId` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetOrdersByCustomerId` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetOrdersByCustomerIdData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -983,10 +1021,11 @@ export interface GetOrdersByCustomerIdData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getOrdersByCustomerId, GetOrdersByCustomerIdVariables } from '@firebasegen/default-connector';
+
 // The `GetOrdersByCustomerId` query requires an argument of type `GetOrdersByCustomerIdVariables`:
 const getOrdersByCustomerIdVars: GetOrdersByCustomerIdVariables = {
   customerId: ..., 
-}
+};
 
 // Call the `getOrdersByCustomerId()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -995,8 +1034,8 @@ const { data } = await getOrdersByCustomerId(getOrdersByCustomerIdVars);
 const { data } = await getOrdersByCustomerId({ customerId: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getOrdersByCustomerId(connector, getOrdersByCustomerIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getOrdersByCustomerId(dataConnect, getOrdersByCustomerIdVars);
 
 console.log(data.orders);
 
@@ -1012,10 +1051,11 @@ getOrdersByCustomerId(getOrdersByCustomerIdVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getOrdersByCustomerIdRef, GetOrdersByCustomerIdVariables } from '@firebasegen/default-connector';
+
 // The `GetOrdersByCustomerId` query requires an argument of type `GetOrdersByCustomerIdVariables`:
 const getOrdersByCustomerIdVars: GetOrdersByCustomerIdVariables = {
   customerId: ..., 
-}
+};
 
 // Call the `getOrdersByCustomerIdRef()` function to get a reference to the query.
 const ref = getOrdersByCustomerIdRef(getOrdersByCustomerIdVars);
@@ -1023,8 +1063,8 @@ const ref = getOrdersByCustomerIdRef(getOrdersByCustomerIdVars);
 const ref = getOrdersByCustomerIdRef({ customerId: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getOrdersByCustomerIdRef(connector, getOrdersByCustomerIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getOrdersByCustomerIdRef(dataConnect, getOrdersByCustomerIdVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1062,7 +1102,7 @@ export interface GetOrderByIdVariables {
 }
 ```
 ### Return Type
-Recall that executing the `GetOrderById` query returns a `QueryPromise` that resolves to an object with a `data` property. 
+Recall that executing the `GetOrderById` query returns a `QueryPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `GetOrderByIdData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1098,10 +1138,11 @@ export interface GetOrderByIdData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getOrderById, GetOrderByIdVariables } from '@firebasegen/default-connector';
+
 // The `GetOrderById` query requires an argument of type `GetOrderByIdVariables`:
 const getOrderByIdVars: GetOrderByIdVariables = {
   id: ..., 
-}
+};
 
 // Call the `getOrderById()` function to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1110,8 +1151,8 @@ const { data } = await getOrderById(getOrderByIdVars);
 const { data } = await getOrderById({ id: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await getOrderById(connector, getOrderByIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getOrderById(dataConnect, getOrderByIdVars);
 
 console.log(data.order);
 
@@ -1127,10 +1168,11 @@ getOrderById(getOrderByIdVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getOrderByIdRef, GetOrderByIdVariables } from '@firebasegen/default-connector';
+
 // The `GetOrderById` query requires an argument of type `GetOrderByIdVariables`:
 const getOrderByIdVars: GetOrderByIdVariables = {
   id: ..., 
-}
+};
 
 // Call the `getOrderByIdRef()` function to get a reference to the query.
 const ref = getOrderByIdRef(getOrderByIdVars);
@@ -1138,8 +1180,8 @@ const ref = getOrderByIdRef(getOrderByIdVars);
 const ref = getOrderByIdRef({ id: ..., });
 
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = getOrderByIdRef(connector, getOrderByIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getOrderByIdRef(dataConnect, getOrderByIdVars);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1155,6 +1197,7 @@ executeQuery(ref).then((response) => {
 ```
 
 # Mutations
+
 There are two ways to execute a Data Connect Mutation using the generated Web SDK:
 - Using a Mutation Reference function, which returns a `MutationRef`
   - The `MutationRef` can be used as an argument to `executeMutation()`, which will execute the Mutation and return a `MutationPromise`
@@ -1164,7 +1207,7 @@ There are two ways to execute a Data Connect Mutation using the generated Web SD
 The following is true for both the action shortcut function and the `MutationRef` function:
 - The `MutationPromise` returned will resolve to the result of the Mutation once it has finished executing
 - If the Mutation accepts arguments, both the action shortcut function and the `MutationRef` function accept a single argument: an object that contains all the required variables (and the optional variables) for the Mutation
-- Both functions can be called with or without passing in a `DataConnect` instance as an argument
+- Both functions can be called with or without passing in a `DataConnect` instance as an argument. If no `DataConnect` argument is passed in, then the generated SDK will call `getDataConnect(connectorConfig)` behind the scenes for you.
 
 Below are examples of how to use the `default` connector's generated functions to execute each mutation. You can also follow the examples from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#using-mutations).
 
@@ -1195,7 +1238,7 @@ export interface UpsertCustomerVariables {
 }
 ```
 ### Return Type
-Recall that executing the `UpsertCustomer` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `UpsertCustomer` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `UpsertCustomerData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1208,6 +1251,7 @@ export interface UpsertCustomerData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, upsertCustomer, UpsertCustomerVariables } from '@firebasegen/default-connector';
+
 // The `UpsertCustomer` mutation requires an argument of type `UpsertCustomerVariables`:
 const upsertCustomerVars: UpsertCustomerVariables = {
   firstName: ..., 
@@ -1215,7 +1259,7 @@ const upsertCustomerVars: UpsertCustomerVariables = {
   email: ..., 
   phone: ..., 
   acceptsMarketing: ..., 
-}
+};
 
 // Call the `upsertCustomer()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1224,8 +1268,8 @@ const { data } = await upsertCustomer(upsertCustomerVars);
 const { data } = await upsertCustomer({ firstName: ..., lastName: ..., email: ..., phone: ..., acceptsMarketing: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await upsertCustomer(connector, upsertCustomerVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await upsertCustomer(dataConnect, upsertCustomerVars);
 
 console.log(data.customer_upsert);
 
@@ -1241,6 +1285,7 @@ upsertCustomer(upsertCustomerVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, upsertCustomerRef, UpsertCustomerVariables } from '@firebasegen/default-connector';
+
 // The `UpsertCustomer` mutation requires an argument of type `UpsertCustomerVariables`:
 const upsertCustomerVars: UpsertCustomerVariables = {
   firstName: ..., 
@@ -1248,7 +1293,7 @@ const upsertCustomerVars: UpsertCustomerVariables = {
   email: ..., 
   phone: ..., 
   acceptsMarketing: ..., 
-}
+};
 
 // Call the `upsertCustomerRef()` function to get a reference to the mutation.
 const ref = upsertCustomerRef(upsertCustomerVars);
@@ -1256,8 +1301,8 @@ const ref = upsertCustomerRef(upsertCustomerVars);
 const ref = upsertCustomerRef({ firstName: ..., lastName: ..., email: ..., phone: ..., acceptsMarketing: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = upsertCustomerRef(connector, upsertCustomerVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = upsertCustomerRef(dataConnect, upsertCustomerVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1298,7 +1343,7 @@ export interface CreateProductReviewVariables {
 }
 ```
 ### Return Type
-Recall that executing the `CreateProductReview` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `CreateProductReview` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `CreateProductReviewData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1311,13 +1356,14 @@ export interface CreateProductReviewData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createProductReview, CreateProductReviewVariables } from '@firebasegen/default-connector';
+
 // The `CreateProductReview` mutation requires an argument of type `CreateProductReviewVariables`:
 const createProductReviewVars: CreateProductReviewVariables = {
   productId: ..., 
   customerId: ..., 
   rating: ..., 
   content: ..., 
-}
+};
 
 // Call the `createProductReview()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1326,8 +1372,8 @@ const { data } = await createProductReview(createProductReviewVars);
 const { data } = await createProductReview({ productId: ..., customerId: ..., rating: ..., content: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await createProductReview(connector, createProductReviewVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await createProductReview(dataConnect, createProductReviewVars);
 
 console.log(data.productReview_insert);
 
@@ -1343,13 +1389,14 @@ createProductReview(createProductReviewVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createProductReviewRef, CreateProductReviewVariables } from '@firebasegen/default-connector';
+
 // The `CreateProductReview` mutation requires an argument of type `CreateProductReviewVariables`:
 const createProductReviewVars: CreateProductReviewVariables = {
   productId: ..., 
   customerId: ..., 
   rating: ..., 
   content: ..., 
-}
+};
 
 // Call the `createProductReviewRef()` function to get a reference to the mutation.
 const ref = createProductReviewRef(createProductReviewVars);
@@ -1357,8 +1404,8 @@ const ref = createProductReviewRef(createProductReviewVars);
 const ref = createProductReviewRef({ productId: ..., customerId: ..., rating: ..., content: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = createProductReviewRef(connector, createProductReviewVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = createProductReviewRef(dataConnect, createProductReviewVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1405,7 +1452,7 @@ export interface CreateOrderVariables {
 }
 ```
 ### Return Type
-Recall that executing the `CreateOrder` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `CreateOrder` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `CreateOrderData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1418,6 +1465,7 @@ export interface CreateOrderData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createOrder, CreateOrderVariables } from '@firebasegen/default-connector';
+
 // The `CreateOrder` mutation requires an argument of type `CreateOrderVariables`:
 const createOrderVars: CreateOrderVariables = {
   customerId: ..., 
@@ -1430,7 +1478,7 @@ const createOrderVars: CreateOrderVariables = {
   totalPrice: ..., 
   financialStatus: ..., 
   fulfillmentStatus: ..., 
-}
+};
 
 // Call the `createOrder()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1439,8 +1487,8 @@ const { data } = await createOrder(createOrderVars);
 const { data } = await createOrder({ customerId: ..., chargeId: ..., paymentIntentId: ..., receiptUrl: ..., subtotalPrice: ..., totalTax: ..., totalShippingPrice: ..., totalPrice: ..., financialStatus: ..., fulfillmentStatus: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await createOrder(connector, createOrderVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await createOrder(dataConnect, createOrderVars);
 
 console.log(data.order_insert);
 
@@ -1456,6 +1504,7 @@ createOrder(createOrderVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createOrderRef, CreateOrderVariables } from '@firebasegen/default-connector';
+
 // The `CreateOrder` mutation requires an argument of type `CreateOrderVariables`:
 const createOrderVars: CreateOrderVariables = {
   customerId: ..., 
@@ -1468,7 +1517,7 @@ const createOrderVars: CreateOrderVariables = {
   totalPrice: ..., 
   financialStatus: ..., 
   fulfillmentStatus: ..., 
-}
+};
 
 // Call the `createOrderRef()` function to get a reference to the mutation.
 const ref = createOrderRef(createOrderVars);
@@ -1476,8 +1525,8 @@ const ref = createOrderRef(createOrderVars);
 const ref = createOrderRef({ customerId: ..., chargeId: ..., paymentIntentId: ..., receiptUrl: ..., subtotalPrice: ..., totalTax: ..., totalShippingPrice: ..., totalPrice: ..., financialStatus: ..., fulfillmentStatus: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = createOrderRef(connector, createOrderVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = createOrderRef(dataConnect, createOrderVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1520,7 +1569,7 @@ export interface UpdateOrderByPaymentIntentIdVariables {
 }
 ```
 ### Return Type
-Recall that executing the `UpdateOrderByPaymentIntentId` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `UpdateOrderByPaymentIntentId` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `UpdateOrderByPaymentIntentIdData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1533,6 +1582,7 @@ export interface UpdateOrderByPaymentIntentIdData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByPaymentIntentId, UpdateOrderByPaymentIntentIdVariables } from '@firebasegen/default-connector';
+
 // The `UpdateOrderByPaymentIntentId` mutation requires an argument of type `UpdateOrderByPaymentIntentIdVariables`:
 const updateOrderByPaymentIntentIdVars: UpdateOrderByPaymentIntentIdVariables = {
   paymentIntentId: ..., 
@@ -1541,7 +1591,7 @@ const updateOrderByPaymentIntentIdVars: UpdateOrderByPaymentIntentIdVariables = 
   receiptUrl: ..., // optional
   processedAt: ..., // optional
   chargeId: ..., // optional
-}
+};
 
 // Call the `updateOrderByPaymentIntentId()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1550,8 +1600,8 @@ const { data } = await updateOrderByPaymentIntentId(updateOrderByPaymentIntentId
 const { data } = await updateOrderByPaymentIntentId({ paymentIntentId: ..., financialStatus: ..., fulfillmentStatus: ..., receiptUrl: ..., processedAt: ..., chargeId: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await updateOrderByPaymentIntentId(connector, updateOrderByPaymentIntentIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await updateOrderByPaymentIntentId(dataConnect, updateOrderByPaymentIntentIdVars);
 
 console.log(data.order_update);
 
@@ -1567,6 +1617,7 @@ updateOrderByPaymentIntentId(updateOrderByPaymentIntentIdVars).then((response) =
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByPaymentIntentIdRef, UpdateOrderByPaymentIntentIdVariables } from '@firebasegen/default-connector';
+
 // The `UpdateOrderByPaymentIntentId` mutation requires an argument of type `UpdateOrderByPaymentIntentIdVariables`:
 const updateOrderByPaymentIntentIdVars: UpdateOrderByPaymentIntentIdVariables = {
   paymentIntentId: ..., 
@@ -1575,7 +1626,7 @@ const updateOrderByPaymentIntentIdVars: UpdateOrderByPaymentIntentIdVariables = 
   receiptUrl: ..., // optional
   processedAt: ..., // optional
   chargeId: ..., // optional
-}
+};
 
 // Call the `updateOrderByPaymentIntentIdRef()` function to get a reference to the mutation.
 const ref = updateOrderByPaymentIntentIdRef(updateOrderByPaymentIntentIdVars);
@@ -1583,8 +1634,8 @@ const ref = updateOrderByPaymentIntentIdRef(updateOrderByPaymentIntentIdVars);
 const ref = updateOrderByPaymentIntentIdRef({ paymentIntentId: ..., financialStatus: ..., fulfillmentStatus: ..., receiptUrl: ..., processedAt: ..., chargeId: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = updateOrderByPaymentIntentIdRef(connector, updateOrderByPaymentIntentIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = updateOrderByPaymentIntentIdRef(dataConnect, updateOrderByPaymentIntentIdVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1626,7 +1677,7 @@ export interface UpdateOrderByChargeIdVariables {
 }
 ```
 ### Return Type
-Recall that executing the `UpdateOrderByChargeId` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `UpdateOrderByChargeId` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `UpdateOrderByChargeIdData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1639,6 +1690,7 @@ export interface UpdateOrderByChargeIdData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByChargeId, UpdateOrderByChargeIdVariables } from '@firebasegen/default-connector';
+
 // The `UpdateOrderByChargeId` mutation has an optional argument of type `UpdateOrderByChargeIdVariables`:
 const updateOrderByChargeIdVars: UpdateOrderByChargeIdVariables = {
   financialStatus: ..., // optional
@@ -1646,7 +1698,7 @@ const updateOrderByChargeIdVars: UpdateOrderByChargeIdVariables = {
   receiptUrl: ..., // optional
   processedAt: ..., // optional
   chargeId: ..., // optional
-}
+};
 
 // Call the `updateOrderByChargeId()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1657,8 +1709,8 @@ const { data } = await updateOrderByChargeId({ financialStatus: ..., fulfillment
 const { data } = await updateOrderByChargeId();
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await updateOrderByChargeId(connector, updateOrderByChargeIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await updateOrderByChargeId(dataConnect, updateOrderByChargeIdVars);
 
 console.log(data.order_update);
 
@@ -1674,6 +1726,7 @@ updateOrderByChargeId(updateOrderByChargeIdVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByChargeIdRef, UpdateOrderByChargeIdVariables } from '@firebasegen/default-connector';
+
 // The `UpdateOrderByChargeId` mutation has an optional argument of type `UpdateOrderByChargeIdVariables`:
 const updateOrderByChargeIdVars: UpdateOrderByChargeIdVariables = {
   financialStatus: ..., // optional
@@ -1681,7 +1734,7 @@ const updateOrderByChargeIdVars: UpdateOrderByChargeIdVariables = {
   receiptUrl: ..., // optional
   processedAt: ..., // optional
   chargeId: ..., // optional
-}
+};
 
 // Call the `updateOrderByChargeIdRef()` function to get a reference to the mutation.
 const ref = updateOrderByChargeIdRef(updateOrderByChargeIdVars);
@@ -1691,8 +1744,8 @@ const ref = updateOrderByChargeIdRef({ financialStatus: ..., fulfillmentStatus: 
 const ref = updateOrderByChargeIdRef();
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = updateOrderByChargeIdRef(connector, updateOrderByChargeIdVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = updateOrderByChargeIdRef(dataConnect, updateOrderByChargeIdVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1733,7 +1786,7 @@ export interface CreateOrderItemVariables {
 }
 ```
 ### Return Type
-Recall that executing the `CreateOrderItem` mutation returns a `MutationPromise` that resolves to an object with a `data` property. 
+Recall that executing the `CreateOrderItem` mutation returns a `MutationPromise` that resolves to an object with a `data` property.
 
 The `data` property is an object of type `CreateOrderItemData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
@@ -1746,13 +1799,14 @@ export interface CreateOrderItemData {
 ```javascript
 import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createOrderItem, CreateOrderItemVariables } from '@firebasegen/default-connector';
+
 // The `CreateOrderItem` mutation requires an argument of type `CreateOrderItemVariables`:
 const createOrderItemVars: CreateOrderItemVariables = {
   orderId: ..., 
   productId: ..., 
   quantity: ..., 
   price: ..., 
-}
+};
 
 // Call the `createOrderItem()` function to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1761,8 +1815,8 @@ const { data } = await createOrderItem(createOrderItemVars);
 const { data } = await createOrderItem({ orderId: ..., productId: ..., quantity: ..., price: ..., });
 
 // You can also pass in a `DataConnect` instance to the action shortcut function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const { data } = await createOrderItem(connector, createOrderItemVars);
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await createOrderItem(dataConnect, createOrderItemVars);
 
 console.log(data.orderItem_insert);
 
@@ -1778,13 +1832,14 @@ createOrderItem(createOrderItemVars).then((response) => {
 ```javascript
 import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createOrderItemRef, CreateOrderItemVariables } from '@firebasegen/default-connector';
+
 // The `CreateOrderItem` mutation requires an argument of type `CreateOrderItemVariables`:
 const createOrderItemVars: CreateOrderItemVariables = {
   orderId: ..., 
   productId: ..., 
   quantity: ..., 
   price: ..., 
-}
+};
 
 // Call the `createOrderItemRef()` function to get a reference to the mutation.
 const ref = createOrderItemRef(createOrderItemVars);
@@ -1792,8 +1847,8 @@ const ref = createOrderItemRef(createOrderItemVars);
 const ref = createOrderItemRef({ orderId: ..., productId: ..., quantity: ..., price: ..., });
 
 // You can also pass in a `DataConnect` instance to the `MutationRef` function.
-const connector: DataConnect = getDataConnect(connectorConfig);
-const ref = createOrderItemRef(connector, createOrderItemVars);
+const dataConnect = getDataConnect(connectorConfig);
+const ref = createOrderItemRef(dataConnect, createOrderItemVars);
 
 // Call `executeMutation()` on the reference to execute the mutation.
 // You can use the `await` keyword to wait for the promise to resolve.
