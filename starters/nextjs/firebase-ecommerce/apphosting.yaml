@@ -19,8 +19,8 @@ env:
   #   value: 523528123585
   # - variable: NEXT_PUBLIC_FIREBASE_APP_ID
   #   value: 1:523528123585:web:9beae3d259a22ef005d040
-  - variable: GOOGLE_API_KEY
-    secret: google-api-key
+  - variable: SECRET_API_KEY
+    secret: secret-api-key
   - variable: STRIPE_ACCOUNT_ID
     value: acct_1QufCrB0KNbQXb1t
   - variable: STRIPE_SECRET_KEY
